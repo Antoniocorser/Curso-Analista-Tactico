@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Especificaciones</title>
+    <style>
+
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #333;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 5px;
+        }
+
+        section {
+            margin-bottom: 20px;
+        }
+
+        ul {
+            padding: 0;
+            margin-left: 3%;
+        }
+
+        li::before {
+            color: #007BFF;
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+        }
+
+        .testimonios {
+            font-style: italic;
+            color: #777;
+        }
+
+        p a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+
+        p a:hover {
+            color: coral;
+        }
+
+        p a:active {
+            color: rgb(144, 7, 235);
+        }
+
+        #galeria {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        #galeria button {
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        #galeria button:hover {
+            background-color: #e61212;
+        }
+
+        #galeria button:active {
+            transform: scale(0.95);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Especificaciones del curso</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="preguntas.html">Preguntas Frecuentes</a></li>
+            <li><a href="soporte tecnico.html">Soporte Técnico</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section>
+            <h2>Información del Curso</h2>
+            <p>El curso de Analista Táctico de Fútbol es una oportunidad única para sumergirse en el fascinante mundo del fútbol desde una perspectiva estratégica y táctica.</p>
+        </section>
+
+        <section>
+            <h2>¿Por qué Elegir Este Curso?</h2>
+            <p>Nuestro programa se destaca por:</p>
+            <ul>
+                <li>Profesorado experimentado compuesto por entrenadores y analistas tácticos reconocidos.</li>
+                <li>Enfoque práctico con proyectos reales y análisis de partidos en vivo.</li>
+                <li>Acceso a herramientas de análisis táctico utilizadas por profesionales.</li>
+                <li>Red de alumnos y oportunidades de networking en la industria del fútbol.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Temas Destacados</h2>
+            <p>Exploraremos temas clave, como:</p>
+            <ul>
+                <li>Desglose detallado de formaciones y sistemas de juego.</li>
+                <li>Análisis de estrategias utilizadas en diferentes situaciones de juego.</li>
+                <li>Identificación de patrones tácticos en jugadores y equipos.</li>
+                <li>Implementación práctica de conocimientos en situaciones de partido.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Experiencia de Aprendizaje</h2>
+            <p>La experiencia de aprendizaje incluye:</p>
+            <ul>
+                <li>Clases teóricas interactivas con material multimedia.</li>
+                <li>Sesiones prácticas de análisis de partidos en grupo.</li>
+                <li>Proyectos individuales y colaborativos para aplicar conceptos aprendidos.</li>
+                <li>Feedback personalizado de los instructores para el desarrollo continuo.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Requisitos y Elegibilidad</h2>
+            <p>Este curso está diseñado para:</p>
+            <ul>
+                <li>Aficionados apasionados por el fútbol con un deseo de comprender más allá del juego.</li>
+                <li>Entrenadores y profesionales del fútbol que buscan mejorar sus habilidades tácticas.</li>
+                <li>Analistas deportivos y amantes del análisis estratégico.</li>
+            </ul>
+            <p>No se requiere experiencia previa, pero se recomienda tener un conocimiento básico del fútbol.</p>
+        </section>
+
+        <section>
+            <h2>Testimonios de Alumnos</h2>
+            <div class="testimonios">
+                <p>"Este curso me proporcionó una comprensión profunda de las tácticas en el fútbol. La combinación de teoría y práctica realmente hizo la diferencia."</p>
+                <p>- Juan Pérez, Analista Táctico Aspirante</p>
+            </div>
+            <div class="testimonios">
+                <p>"La experiencia de aprendizaje fue excepcional. Los instructores son apasionados y conocedores, y el material es relevante y aplicable."</p>
+                <p>- María Rodríguez, Entrenadora de Fútbol</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>Próximos Pasos</h2>
+            <p>¿Estás listo para mejorar tu comprensión del juego y destacarte en el análisis táctico de fútbol? ¡<a href="registro.html">Inscríbete ahora</a> y comienza tu viaje hacia el conocimiento táctico!</p>
+        </section>
+        
+        <section>
+            <h2>Galería de Fotos</h2>
+            <div id="galeria">
+                <button onclick="anteriorFoto()">Anterior</button>
+                <img id="imagenMostrada" src="Imagenes/foto1.png" alt="Imagen 1">
+                <button onclick="siguienteFoto()">Siguiente</button>
+            </div>
+        </section>
+
+        <script>
+            var actual = 1;
+
+            function mostrarFoto(numero) {
+                var foto = document.getElementById("imagenMostrada");
+                foto.src = "Imagenes/foto" + numero + ".png";
+            }
+
+            function siguienteFoto() {
+                if (actual < 10) {
+                    actual++;
+                } else {
+                    actual = 1;
+                }
+                mostrarFoto(actual);
+            }
+
+            function anteriorFoto() {
+                if (actual > 1) {
+                    actual--;
+                } else {
+                    actual = 10;
+                }
+                mostrarFoto(actual);
+            }
+
+        </script>
+    </main>
+
+    <footer>
+        <p>&copy; Antonio Cordero Serrano</p>
+    </footer>
+</body>
+</html>

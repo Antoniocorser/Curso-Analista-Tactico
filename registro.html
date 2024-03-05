@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Registro</title>
+    <style>
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        form {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 5px;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1.2em;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            margin-bottom: 0.5em;
+        }
+
+        button:hover {
+            background-color: #00adf1;
+        }
+
+        button:active {
+            transform: scale(0.95);
+        }
+
+        p a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+
+        p a:hover {
+            color: coral;
+        }
+
+        p a:active {
+            color: rgb(144, 7, 235);
+        }
+
+        .textoVerde {
+            color: #4caf50;
+            text-align: center;
+        }
+
+        .textoRojo{
+            color: crimson;
+            text-align: center;
+        }
+        
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Registro en el curso</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="especificaciones.html">Especificaciones del curso</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Registro</h2>
+            <p>Regístrate ahora para asegurar tu lugar en el curso. No te pierdas la oportunidad de avanzar en tu carrera en el mundo del análisis táctico de fútbol.</p>
+        </section>
+
+        <section>
+            <h2>Formulario de Registro</h2>
+            <form method="POST" id="registration-form">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required placeholder="Ingresa tu nombre completo">
+
+                <label for="apellido">Apellido:</label>
+                <input type="text" id="apellido" name="apellido" required placeholder="Ingresa tu apellido completo">
+
+                <label for="email">Correo:</label>
+                <input type="email" id="email" name="email" required placeholder="nombre@ejemplo.com">
+
+                <label for="edad">Edad:</label>
+                <input type="number" id="edad" name="edad" required placeholder="Ingresa tu edad">
+
+                <label for="pais">País:</label>
+                <select id="pais" name="pais" required>
+                    <option value="" disabled selected>Selecciona tu procedencia</option>
+                    <option value="europa">Europa</option>
+                    <option value="america">América</option>
+                    <option value="asia">Asia</option>
+                    <option value="africa">África</option>
+                </select>
+
+                <label for="profesion">Profesión:</label>
+                <select id="profesion" name="profesion" required>
+                    <option value="" disabled selected>Selecciona tu profesión</option>
+                    <option value="aficionado">Aficionado</option>
+                    <option value="jugador">Jugador</option>
+                    <option value="entrenador">Entrenador</option>
+                </select>
+
+                <label for="nivel-educativo">Nivel:</label>
+                <select id="nivel-educativo" name="nivel-educativo" required>
+                    <option value="" disabled selected>Selecciona tu nivel educativo</option>
+                    <option value="bachiller">Bachiller</option>
+                    <option value="gm">Grado Medio</option>
+                    <option value="gs">Grado Superior</option>
+                    <option value="universidad">Carrera Universitaria</option>
+                </select>
+
+                <label for="experiencia-futbolistica">Experiencia:</label>
+                <textarea id="experiencia-futbolistica" name="experiencia-futbolistica" placeholder="Cuentanos sobre tu experiencia en el fútbol"></textarea>
+
+                <label for="expectativas">Expectativas:</label>
+                <textarea id="expectativas" name="expectativas" placeholder="¿Qué esperas lograr con este curso?"></textarea>
+
+                <button type="button" onclick="submitForm()">Registrarse</button>
+                <button type="button" onclick="borrarDatos()">Borrar Datos</button>
+                <p id="registro"></p>
+            </form>
+
+            <div id="response-message"></div>
+        </section>
+        <section>
+            <h2>Descubre lo que Aprenderás</h2>
+            <p>En nuestro curso, explorarás temas fascinantes que incluyen:</p>
+            <ul>
+                <li>Análisis de formaciones y estrategias tácticas utilizadas por equipos profesionales.</li>
+                <li>Estudio de jugadas maestras y momentos clave en los partidos de fútbol.</li>
+                <li>Uso avanzado de herramientas y software especializado en análisis táctico.</li>
+                <li>Participación en discusiones interactivas y análisis en tiempo real durante las clases.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>¡Obtén una Ventaja Competitiva!</h2>
+            <p>Al completar este curso, obtendrás una ventaja competitiva en el ámbito del análisis táctico de fútbol. Ya sea que estés buscando avanzar en tu carrera actual o explorar nuevas oportunidades, nuestro curso te proporcionará las habilidades necesarias.</p>
+        </section>
+
+        <section>
+            <h2>Preguntas Frecuentes</h2>
+            <p>¿Tienes preguntas? Consulta nuestras <a href="preguntas.html">Preguntas Frecuentes</a> para obtener respuestas a las consultas más comunes. Si no encuentras la información que buscas, no dudes en ponerte en <a href="soporte tecnico.html">contacto</a> con nosotros.</p>
+        </section>
+
+        <section>
+            <h2>Politicas de cancelación</h2>
+            <p>¿Quieres cancelar tu inscripción? Consulta nuestra <a href="cancelacion.html">Política de Cancelación</a> para obtener la información que necesites saber</p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; Antonio Cordero Serrano</p>
+    </footer>
+    <script>
+        function submitForm() {
+            var nombre = document.getElementById("nombre").value;
+            var apellido = document.getElementById("apellido").value;
+            var email = document.getElementById("email").value;
+            var edad = document.getElementById("edad").value;
+            var pais = document.getElementById("pais").value;
+            var profesion = document.getElementById("profesion").value;
+            var nivelEducativo = document.getElementById("nivel-educativo").value;
+            var experienciaFutbolistica = document.getElementById("experiencia-futbolistica").value;
+            var expectativas = document.getElementById("expectativas").value;
+            var parrafo = document.getElementById("registro");
+            // Validar si todos los campos están llenos
+            if (
+                nombre !== "" &&
+                apellido !== "" &&
+                email !== "" &&
+                edad !== "" &&
+                pais !== "" &&
+                profesion !== "" &&
+                nivelEducativo !== "" &&
+                experienciaFutbolistica !== "" &&
+                expectativas !== ""
+            ) {
+                // Todos los campos están llenos, mostrar alerta de registro exitoso
+                // Cambia el contenido del párrafo
+                    parrafo.innerHTML = "¡Registro completado exitosamente!";
+
+                    // Agrega la clase para cambiar el color a verde
+                    parrafo.classList.remove("textoRojo");
+                    parrafo.classList.add("textoVerde");
+            } else {
+                    parrafo.innerHTML = "Por favor, completa todos los campos del formulario";
+
+                    // Agrega la clase para cambiar el color a rojo
+                    parrafo.classList.remove("textoVerde");
+                    parrafo.classList.add("textoRojo");
+            }
+        }
+        
+        function borrarDatos() {
+        var parrafo = document.getElementById("registro");
+        // Pregunta al usuario si está seguro de borrar los datos
+        var confirmacion = confirm("¿Estás seguro de borrar los datos introducidos en el formulario?");
+
+        // Si el usuario confirma, borra los datos del formulario
+        if (confirmacion) {
+            document.getElementById("registration-form").reset();
+            parrafo.innerHTML = "";
+            alert("Datos borrados exitosamente.");
+        }
+    }
+    </script>
+</body>
+</html>

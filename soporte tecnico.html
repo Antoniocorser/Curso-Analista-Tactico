@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Soporte Técnico</title>
+    <style>
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 20px;
+            padding: 2%;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input, textarea, select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        button {
+            grid-column: span 2;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            padding: 12px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: coral;
+        }
+
+        .textoVerde {
+            color: #4caf50;
+            text-align: center;
+        }
+
+        .textoRojo{
+            color: crimson;
+            text-align: center;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: left;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Soporte Técnico</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="especificaciones.html">Especificaciones del curso</a></li>
+            <li><a href="registro.html">Registro</a></li>
+            <li><a href="preguntas.html">Preguntas Frecuentes</a></li>
+        </ul>
+    </nav>
+    <main>
+        <form method="POST" id="soporte-tecnico" onsubmit="submitForm(); return false;">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre">
+
+            <label for="email">Correo Electrónico:</label>
+            <input type="email" id="email" name="email">
+
+            <label for="telefono">Teléfono:</label>
+            <input type="tel" id="telefono" name="telefono">
+
+            <label for="asunto">Asunto:</label>
+            <input type="text" id="asunto" name="asunto">
+
+            <label for="categoria">Categoría:</label>
+            <select id="categoria" name="categoria">
+                <option value="consulta">Consulta</option>
+                <option value="problema">Problema Técnico</option>
+                <option value="otro">Otro</option>
+            </select>
+
+            <label for="mensaje">Mensaje:</label>
+            <textarea id="mensaje" name="mensaje" rows="4"></textarea>
+
+            <button type="submit">Enviar Mensaje</button>
+        </form>
+        <p id="texto"></p>
+    </main>
+    <footer>
+        <p>&copy; Antonio Cordero Serrano</p>
+    </footer>
+
+    <script>
+        function submitForm() {
+            var nombre = document.getElementById("nombre").value;
+            var email = document.getElementById("email").value;
+            var telefono = document.getElementById("telefono").value;
+            var asunto = document.getElementById("asunto").value;
+            var categoria = document.getElementById("categoria").value;
+            var mensaje = document.getElementById("mensaje").value;
+            var parrafo = document.getElementById("texto");
+            // Validar si todos los campos están llenos
+            if (
+                nombre !== "" &&
+                email !== "" &&
+                asunto !== "" &&
+                asunto !== "" &&
+                categoria !== "" &&
+                mensaje !== "" 
+            ) {
+                // Todos los campos están llenos, mostrar mensaje de registro exitoso
+                parrafo.innerHTML = "¡Enviado exitosamente!"
+
+                // Agrega la clase para cambiar el color a verde
+                parrafo.classList.remove("textoRojo");
+                parrafo.classList.add("textoVerde");
+                
+                // Borrar datos del formulario
+                borrarDatos();
+            } else {
+                // Al menos un campo está vacío, mostrar mensaje indicando qué dato falta
+                parrafo.innerHTML = "Por favor, completa todos los campos"
+                parrafo.classList.remove("textoVerde");
+                parrafo.classList.add("textoRojo");
+            }
+        }
+        
+        function borrarDatos() {
+            document.getElementById("soporte-tecnico").reset();
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Preguntas Frecuentes</title>
+    <!-- Incluir jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #333;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 5px;
+        }
+
+        p a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+
+        p a:hover {
+            color: coral;
+        }
+
+        p a:active {
+            color: rgb(144, 7, 235);
+        }
+        .pregunta {
+            cursor: pointer;
+            padding: 10px;
+            margin: 10px 0;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .respuesta {
+            display: none;
+            padding: 10px;
+            margin: 10px 0;
+            background-color: #f0f0f0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .respuesta.show {
+            display: block;
+        }
+
+        #ocultar {
+            display: block;
+            margin: 20px auto; 
+            padding: 10px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.5s ease, transform 0.2s ease;
+        }
+
+        #ocultar:hover{
+            background-color: coral;
+            transform: scale(1.1); 
+            animation: none; 
+        }
+
+        #ocultar:active{
+            background-color: rgb(255, 0, 0);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Preguntas Frecuentes</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+        </ul>
+    </nav>
+    <main>
+        <div class="pregunta">
+            <h3>¿Cómo me registro?</h3>
+            <div class="respuesta">
+                <p>Para registrarte, simplemente visita nuestra <a href="registro.html">página de registro</a> y completa el formulario con tus datos personales. ¡Es fácil y rápido!</p>
+            </div>
+        </div>
+
+        <div class="pregunta">
+            <h3>¿Cuáles son los requisitos del curso?</h3>
+            <div class="respuesta">
+                <p>Los requisitos del curso varían según la especialidad. Puedes encontrar <a href="especificaciones.html">información detallada</a> en la sección de requisitos de cada curso en nuestra página.</p>
+            </div>
+        </div>
+
+        <div class="pregunta">
+            <h3>¿Cómo puedo contactar al soporte técnico?</h3>
+            <div class="respuesta">
+                <p>Puedes contactar a nuestro equipo de soporte técnico a través de nuestro <a href="soporte tecnico.html"> sección de contacto </a> en la sección de soporte. También estamos disponibles por correo electrónico y teléfono.</p>
+            </div>
+        </div>
+
+        <div class="pregunta">
+            <h3>¿Cuánto tiempo dura el curso?</h3>
+            <div class="respuesta">
+                <p>La duración del curso depende de la especialidad. Puedes encontrar la información sobre la duración estimada en la página de detalles del curso.</p>
+            </div>
+        </div>
+
+        <div class="pregunta">
+            <h3>¿Se ofrecen becas o descuentos?</h3>
+            <div class="respuesta">
+                <p>Sí, ofrecemos becas y descuentos en determinadas circunstancias. Puedes consultar nuestra página de <a href="becas.html">becas</a> o ponerte en <a href="soporte tecnico.html">contacto</a> con nuestro equipo de admisiones para obtener más información.</p>
+            </div>
+        </div>
+        <div class="pregunta">
+            <h3>¿Cómo accedo a los materiales del curso?</h3>
+            <div class="respuesta">
+                <p>Una vez que te hayas registrado en el curso, te enviaremos los materiales la dirección de correo con la cual hayas sido registrado</p>
+            </div>
+        </div>
+        
+        <div class="pregunta">
+            <h3>¿Hay pruebas o exámenes durante el curso?</h3>
+            <div class="respuesta">
+                <p>Sí, algunos cursos pueden incluir pruebas o exámenes para evaluar tu comprensión y progreso. La información detallada estará disponible en la descripción del curso.</p>
+            </div>
+        </div>
+        
+        <div class="pregunta">
+            <h3>¿Puedo cancelar mi inscripción?</h3>
+            <div class="respuesta">
+                <p>Sí, puedes cancelar tu inscripción en cualquier momento. Consulta nuestras <a href="cancelacion.html">Políticas de Cancelación</a> para obtener información específica sobre reembolsos y plazos.</p>
+            </div>
+        </div>
+        
+        <div class="pregunta">
+            <h3>¿Se proporciona certificación al finalizar el curso?</h3>
+            <div class="respuesta">
+                <p>Sí, al completar con éxito el curso, recibirás una certificación que puedes descargar o imprimir. Esta certificación a menudo incluirá detalles sobre la duración y el contenido del curso.</p>
+            </div>
+        </div>
+        
+        <div class="pregunta">
+            <h3>¿Hay oportunidades de networking con otros estudiantes?</h3>
+            <div class="respuesta">
+                <p>Sí, organizamos eventos y foros en línea donde puedes conectarte con otros estudiantes, compartir experiencias y participar en discusiones sobre temas relacionados con el curso.</p>
+            </div>
+        </div>
+        
+        <div class="pregunta">
+            <h3>¿Cómo puedo actualizar mis datos personales en mi cuenta?</h3>
+            <div class="respuesta">
+                <p>Puedes actualizar tus datos personales accediendo a tu cuenta y seleccionando la opción de perfil o configuración. Desde allí, podrás modificar la información según sea necesario.</p>
+            </div>
+        </div>
+        <button id="ocultar">Ocultar Todo</button>
+    </main>
+    <footer>
+        <p>&copy; Antonio Cordero Serrano</p>
+    </footer>
+
+    <script>
+        $(document).ready(function() {
+            // Manejar clic en preguntas
+            $('.pregunta').click(function() {
+                $(this).find('.respuesta').slideToggle();
+            });
+
+            // Manejar clic en botón ocultar
+            $('#ocultar').click(function() {
+                $('.respuesta').slideUp();
+            });
+        });
+    </script>
+</body>
+</html>
