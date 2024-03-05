@@ -73,7 +73,7 @@ footer {
     bottom: 0;
 }
 
-main{
+main :nth-of-type(label){
         margin-left: 1%;
         text-align: justify;
 }
