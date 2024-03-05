@@ -173,38 +173,48 @@
         <section>
             <h2>Galería de Fotos</h2>
             <div id="galeria">
-                <button onclick="anteriorFoto()">Anterior</button>
-                <img id="imagenMostrada" src="Imagenes/foto1.png" alt="Imagen 1">
-                <button onclick="siguienteFoto()">Siguiente</button>
+                <button onclick="anteriorFoto()">←</button>
+                <img id="imagenMostrada" src="Imagenes/foto1.png" alt="Imagen">
+                <button onclick="siguienteFoto()">→</button>
             </div>
         </section>
 
         <script>
             var actual = 1;
+        var intervalo;
 
-            function mostrarFoto(numero) {
-                var foto = document.getElementById("imagenMostrada");
-                foto.src = "Imagenes/foto" + numero + ".png";
+        function mostrarFoto(numero) {
+            var foto = document.getElementById("imagenMostrada");
+            foto.src = "Imagenes/foto" + numero + ".png";
+        }
+
+        function siguienteFoto() {
+            if (actual < 10) {
+                actual++;
+            } else {
+                actual = 1;
             }
+            mostrarFoto(actual);
+        }
 
-            function siguienteFoto() {
-                if (actual < 10) {
-                    actual++;
-                } else {
-                    actual = 1;
-                }
-                mostrarFoto(actual);
+        function anteriorFoto() {
+            if (actual > 1) {
+                actual--;
+            } else {
+                actual = 10;
             }
+            mostrarFoto(actual);
+        }
 
-            function anteriorFoto() {
-                if (actual > 1) {
-                    actual--;
-                } else {
-                    actual = 10;
-                }
-                mostrarFoto(actual);
-            }
+        // Función para avanzar automáticamente a la siguiente foto cada 3 segundos
+        function avanzarAutomaticamente() {
+            intervalo = setInterval(function () {
+                siguienteFoto();
+            }, 1500); // Cambiar el valor (en milisegundos) según la velocidad deseada
+        }
 
+        // Iniciar el avance automático al cargar la página
+        avanzarAutomaticamente();
         </script>
     </main>
 
