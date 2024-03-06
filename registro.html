@@ -231,17 +231,18 @@
                     parrafo.classList.remove("textoRojo");
                     parrafo.classList.add("textoVerde");
             } else {
-                    parrafo.innerHTML = "Por favor, completa todos los campos del formulario";
+                parrafo.innerHTML = "Por favor, completa todos los campos del formulario";
 
-                    // Agrega la clase para cambiar el color a rojo
-                    parrafo.classList.remove("textoVerde");
-                    parrafo.classList.add("textoRojo");
-            }
-            if (contrasena !== confirmarContrasena){
-                parrafo.innerHTML = "Las contraseñas no coinciden";
+                // Agrega la clase para cambiar el color a rojo
                 parrafo.classList.remove("textoVerde");
                 parrafo.classList.add("textoRojo");
+                    if (contrasena !== confirmarContrasena){
+                        parrafo.innerHTML = "Las contraseñas no coinciden";
+                        parrafo.classList.remove("textoVerde");
+                        parrafo.classList.add("textoRojo");
+                    }
             }
+            
         }
         
         function borrarDatos() {
