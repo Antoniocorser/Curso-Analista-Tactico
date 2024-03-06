@@ -41,6 +41,7 @@ nav a {
     font-weight: bold;
     font-size: 1.2em;
     transition: color 0.5s ease-in-out;
+    text-wrap: nowrap;
 }
 
 nav a:hover {
@@ -73,7 +74,7 @@ footer {
     bottom: 0;
 }
 
-main :nth-of-type(label){
+main{
         margin-left: 1%;
         text-align: justify;
 }

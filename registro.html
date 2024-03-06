@@ -82,9 +82,6 @@
             display: block;
             margin: 0 auto;
         }
-        label {
-            text-align: left;
-        }
     </style>
 </head>
 <body>
@@ -109,16 +106,10 @@
                 <label for="nombre">Nombre:</label>
                 <input type="text" id="nombre" name="nombre" required placeholder="Ingresa tu nombre completo">
 
-                <label for="apellido">Apellidos:</label>
+                <label for="apellido">Apellido:</label>
                 <input type="text" id="apellido" name="apellido" required placeholder="Ingresa tu apellido completo">
 
-                <label for="contrasena">Contraseña:</label>
-                <input type="password" id="contrasena" name="contrasena" required placeholder="Ingresa una contraseña">
-
-                <label for="confirmarContrasena">Confirmar contraseña:</label>
-                <input type="password" id="confirmarContrasena" name="confirmarContrasena" required placeholder="Confirma la contraseña">
-
-                <label for="email">Correo Electrónico:</label>
+                <label for="email">Correo:</label>
                 <input type="email" id="email" name="email" required placeholder="nombre@ejemplo.com">
 
                 <label for="edad">Edad:</label>
@@ -141,7 +132,7 @@
                     <option value="entrenador">Entrenador</option>
                 </select>
 
-                <label for="nivel-educativo">Nivel Educativo:</label>
+                <label for="nivel-educativo">Nivel:</label>
                 <select id="nivel-educativo" name="nivel-educativo" required>
                     <option value="" disabled selected>Selecciona tu nivel educativo</option>
                     <option value="bachiller">Bachiller</option>
@@ -150,10 +141,10 @@
                     <option value="universidad">Carrera Universitaria</option>
                 </select>
 
-                <label for="experiencia-futbolistica">Experiencia futbolística:</label>
+                <label for="experiencia-futbolistica">Experiencia:</label>
                 <textarea id="experiencia-futbolistica" name="experiencia-futbolistica" placeholder="Cuentanos sobre tu experiencia en el fútbol"></textarea>
 
-                <label for="expectativas">Expectativas del curso:</label>
+                <label for="expectativas">Expectativas:</label>
                 <textarea id="expectativas" name="expectativas" placeholder="¿Qué esperas lograr con este curso?"></textarea>
 
                 <button type="button" onclick="submitForm()">Registrarse</button>
@@ -161,6 +152,7 @@
                 <p id="registro"></p>
             </form>
 
+            <div id="response-message"></div>
         </section>
         <section>
             <h2>Descubre lo que Aprenderás</h2>
@@ -206,8 +198,6 @@
             var nivelEducativo = document.getElementById("nivel-educativo").value;
             var experienciaFutbolistica = document.getElementById("experiencia-futbolistica").value;
             var expectativas = document.getElementById("expectativas").value;
-            var contrasena = document.getElementById("contrasena").value;
-            var confirmarContrasena = document.getElementById("confirmarContrasena").value;
             var parrafo = document.getElementById("registro");
             // Validar si todos los campos están llenos
             if (
@@ -219,9 +209,7 @@
                 profesion !== "" &&
                 nivelEducativo !== "" &&
                 experienciaFutbolistica !== "" &&
-                expectativas !== "" &&
-                contrasena !== "" &&
-                confirmarContrasena !== ""
+                expectativas !== ""
             ) {
                 // Todos los campos están llenos, mostrar alerta de registro exitoso
                 // Cambia el contenido del párrafo
