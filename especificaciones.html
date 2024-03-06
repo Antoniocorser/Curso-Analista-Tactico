@@ -81,6 +81,11 @@
         #galeria button:active {
             transform: scale(0.95);
         }
+
+        .foto {
+            display: block;
+            margin: 0 auto;
+        }
     </style>
 </head>
 <body>
@@ -98,6 +103,7 @@
         <section>
             <h2>Información del Curso</h2>
             <p>El curso de Analista Táctico de Fútbol es una oportunidad única para sumergirse en el fascinante mundo del fútbol desde una perspectiva estratégica y táctica.</p>
+            <img src="Imagenes/futbolito.png" alt="Curso de fútbol" class="foto">
         </section>
 
         <section>
@@ -109,7 +115,9 @@
                 <li>Acceso a herramientas de análisis táctico utilizadas por profesionales.</li>
                 <li>Red de alumnos y oportunidades de networking en la industria del fútbol.</li>
             </ul>
+            <img src="Imagenes/profesor.webp" alt="Profesores del curso" class="foto">
         </section>
+
 
         <section>
             <h2>Temas Destacados</h2>
@@ -131,6 +139,7 @@
                 <li>Proyectos individuales y colaborativos para aplicar conceptos aprendidos.</li>
                 <li>Feedback personalizado de los instructores para el desarrollo continuo.</li>
             </ul>
+            <img src="Imagenes/aprendizaje.png" alt="Experiencia de aprendizaje" class="foto">
         </section>
 
         <section>
@@ -164,38 +173,48 @@
         <section>
             <h2>Galería de Fotos</h2>
             <div id="galeria">
-                <button onclick="anteriorFoto()">Anterior</button>
-                <img id="imagenMostrada" src="Imagenes/foto1.png" alt="Imagen 1">
-                <button onclick="siguienteFoto()">Siguiente</button>
+                <button onclick="anteriorFoto()">←</button>
+                <img id="imagenMostrada" src="Imagenes/foto1.png" alt="Imagen">
+                <button onclick="siguienteFoto()">→</button>
             </div>
         </section>
 
         <script>
             var actual = 1;
+        var intervalo;
 
-            function mostrarFoto(numero) {
-                var foto = document.getElementById("imagenMostrada");
-                foto.src = "Imagenes/foto" + numero + ".png";
+        function mostrarFoto(numero) {
+            var foto = document.getElementById("imagenMostrada");
+            foto.src = "Imagenes/foto" + numero + ".png";
+        }
+
+        function siguienteFoto() {
+            if (actual < 10) {
+                actual++;
+            } else {
+                actual = 1;
             }
+            mostrarFoto(actual);
+        }
 
-            function siguienteFoto() {
-                if (actual < 10) {
-                    actual++;
-                } else {
-                    actual = 1;
-                }
-                mostrarFoto(actual);
+        function anteriorFoto() {
+            if (actual > 1) {
+                actual--;
+            } else {
+                actual = 10;
             }
+            mostrarFoto(actual);
+        }
 
-            function anteriorFoto() {
-                if (actual > 1) {
-                    actual--;
-                } else {
-                    actual = 10;
-                }
-                mostrarFoto(actual);
-            }
+        // Función para avanzar automáticamente a la siguiente foto cada 3 segundos
+        function avanzarAutomaticamente() {
+            intervalo = setInterval(function () {
+                siguienteFoto();
+            }, 1500); // Cambiar el valor (en milisegundos) según la velocidad deseada
+        }
 
+        // Iniciar el avance automático al cargar la página
+        avanzarAutomaticamente();
         </script>
     </main>
 
