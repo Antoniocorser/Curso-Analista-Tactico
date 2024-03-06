@@ -225,6 +225,11 @@
             ) {
                 // Todos los campos están llenos, mostrar alerta de registro exitoso
                 // Cambia el contenido del párrafo
+                if (contrasena !== confirmarContrasena){
+                        parrafo.innerHTML = "Las contraseñas no coinciden";
+                        parrafo.classList.remove("textoVerde");
+                        parrafo.classList.add("textoRojo");
+                    }
                     parrafo.innerHTML = "¡Registro completado exitosamente!";
                     document.getElementById("formulario-registro").reset();
                     // Agrega la clase para cambiar el color a verde
