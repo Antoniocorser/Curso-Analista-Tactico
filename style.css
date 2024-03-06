@@ -74,7 +74,7 @@ footer {
     bottom: 0;
 }
 
-main:nth-of-type(label){
+main :nth-of-type(label){
         margin-left: 1%;
         text-align: justify;
 }
