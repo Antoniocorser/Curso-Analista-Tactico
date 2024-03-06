@@ -173,9 +173,7 @@
         <section>
             <h2>Galería de Fotos</h2>
             <div id="galeria">
-                <button onclick="anteriorFoto()">←</button>
                 <img id="imagenMostrada" src="Imagenes/foto1.png" alt="Imagen">
-                <button onclick="siguienteFoto()">→</button>
             </div>
         </section>
 
@@ -193,15 +191,6 @@
                 actual++;
             } else {
                 actual = 1;
-            }
-            mostrarFoto(actual);
-        }
-
-        function anteriorFoto() {
-            if (actual > 1) {
-                actual--;
-            } else {
-                actual = 10;
             }
             mostrarFoto(actual);
         }
