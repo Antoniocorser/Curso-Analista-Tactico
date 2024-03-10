@@ -12,6 +12,21 @@ header {
     color: white;
     padding: 1rem;
     text-align: center;
+    position: relative; 
+}
+
+.foto-header {
+    max-width: 150px; 
+    position: absolute;
+    top: 4%;
+    left: 2%;
+}
+
+.andalucia {
+    max-width: 150px;
+    position: absolute;
+    top: 4%;
+    right: 2%;
 }
 
 nav {
@@ -101,4 +116,9 @@ main :nth-of-type(label){
     .respuesta {
         margin: 10px 0;
     }
+
+    .foto-header, .andalucia, .logo-footer {
+        max-width: 80px; /* Ajusta el ancho según tus necesidades para pantallas más pequeñas */
+    }
+
 }
