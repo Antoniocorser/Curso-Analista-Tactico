@@ -118,7 +118,26 @@ main :nth-of-type(label){
     }
 
     .foto-header, .andalucia, .logo-footer {
-        max-width: 80px; /* Ajusta el ancho según tus necesidades para pantallas más pequeñas */
+        max-width: 50px; 
+    }
+
+}
+
+@media screen and (max-width: 1000px) {
+    main {
+        padding: 10px;
+    }
+
+    .pregunta {
+        margin: 10px 0;
+    }
+
+    .respuesta {
+        margin: 10px 0;
+    }
+
+    .foto-header, .andalucia, .logo-footer {
+        max-width: 65px; 
     }
 
 }
