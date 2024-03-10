@@ -72,6 +72,14 @@ footer {
     clear: both;
     transition: background-color 1s ease;
     bottom: 0;
+    position: relative; 
+}
+
+.logo-footer {
+    max-width: 110px;
+    position: absolute;
+    bottom: 2%;
+    right: 1%;
 }
 
 main :nth-of-type(label){
